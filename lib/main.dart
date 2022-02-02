@@ -10,38 +10,45 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(50.0),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.green,
-            border: Border.all(
-                color: Colors.red,
-                width: 3.0,
-                style: BorderStyle.solid
-            ),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 7,
-                  offset: Offset(4,8),
-                  spreadRadius: 2.00
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      verticalDirection: VerticalDirection.down,
+      // textDirection: TextDirection.ltr,
+      children: [
+        Container(
+          color: Colors.amber,
+          height: 150.0,
 
-              )
-            ]
         ),
-        width: 150.0,
-        height: 300.0,
-        child: Text(
-          "hello my friend",
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 15.0,
-            fontFamily: 'lato',
+        Expanded(
+            child: Container(
+            color: Colors.purple,
+            height: 150.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                textDirection: TextDirection.ltr,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      color: Colors.red
+                    ),
+                    height: 30.0,
+                    width: 30.0,
+                  )
+                ],
+              ),
+        ))
+        ,
+        Container(
+          color: Colors.red,
+          height: 150.0,
+          child: Stack(
+            
           ),
         ),
-      ),
+      ],
     );
   }
 }
